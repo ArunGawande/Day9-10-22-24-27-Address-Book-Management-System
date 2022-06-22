@@ -8,9 +8,7 @@ public class AddressBook
 {
 	static List<ContactPerson> contactList = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
-   
     // method for adding contacts in list.
-    
     public static void addContact()
     {
         System.out.println(" Enter your first name : ");
@@ -31,15 +29,13 @@ public class AddressBook
         ContactPerson addressBook = new ContactPerson(firstName, lastName, email, city, state, phoneNumber, zip);
         contactList.add(addressBook);
     }
+
     // method for editing existing contact
     public void editContact()
     {
         Scanner nameInput = new Scanner(System.in);
-        
         System.out.println(" Enter the first name ");
-        
         String fName = nameInput.nextLine();
-        
         for (int index = 0; index < contactList.size(); index++)
         {
             if (contactList.get(index).getFirstName().equals(fName))
@@ -50,6 +46,23 @@ public class AddressBook
             } else
             {
                 System.out.println(" There is no contact ");
+            }
+        }
+    }
+
+    public void deleteContact()
+    {
+        Scanner deleteNameInput = new Scanner(System.in);
+        
+        String deleteFirstName = deleteNameInput.nextLine();
+        
+        for (int increment = 0; increment < contactList.size(); increment++)
+        {
+            if (contactList.get(increment).getFirstName().equals(deleteFirstName))
+            {
+                contactList.remove(increment);
+            } else {
+                System.out.println(" Name does not exist");
             }
         }
     }
