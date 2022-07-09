@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Contact {
 	
-	 ////variables representation////
+////variables representation////
     String firstName;
     String lastName;
     String address;
@@ -17,7 +17,6 @@ public class Contact {
 
     void addContact() {
         Scanner scan=new Scanner(System.in);
-        
         System.out.println("First Name :");
         this.firstName = scan.nextLine();
         System.out.println("Last Name :");
